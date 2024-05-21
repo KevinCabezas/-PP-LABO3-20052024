@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/boton.css" />
+    <link rel="stylesheet" href="./style/ordenarForm.css" />
+    <link rel="stylesheet" href="./style/spiner.css" />
+    <link rel="stylesheet" href="./style/input.css" />
+
+ 
+    <script src="js/index.js" type="module" defer></script>
+
+
+    <title>Simulacro</title>
+</head>
+<body>
+  <header>
+    <div class="container__header">
+      <div class="logo">
+          <a href="#">
+              <!-- <img src="assets\images\Logo\logo-magtimus.png" alt=""> -->
+          </a>
+      </div>
+      <div class="menu">
+          <nav>
+              <ul>
+                  <li><a href="#">Inicio</a></li>
+                  <li><a href="#">Sobre</a></li>
+                  <li><a href="#">Servicios</a></li>
+                  <li><a href="#">Obras</a></li>
+                  <li><a href="#">Contactos</a></li>
+              </ul>
+          </nav>
+
+          <!-- <a href="#" class="btn__quote">Cotizar</a> -->
+
+          <div class="socialMedia"> <!-- aca van las imagenes de redes sociales -->
+              <a href="#">
+                  <!-- <img src="assets\images\social media\facebook.png" alt=""> -->
+              </a> 
+              <a href="#">
+                  <!-- <img src="assets\images\social media\instagram.png" alt=""> -->
+              </a> 
+              <a href="#">
+                  <!-- <img src="assets\images\social media\twitter.png" alt=""> -->
+              </a>
+              <a href="#">
+                  <!-- <img src="assets\images\social media\youtube.png" alt=""> -->
+              </a>
+          </div>
+      </div>
+  </div>
+  
+  </header>
+  <div class="container-seccion">
+    <section>
+      <form action="" method="post" id="form-item" class="form-item">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input
+              class="inputs"
+              type="text"
+              required
+              name="nombre"
+              id="nombre"
+              placeholder="Nombre"
+            />
+        </div>
+        
+       
+        <div class="form-group">
+            <label for="tamanio">Tamaño</label>
+            <input class="inputs"
+              type="number"
+              required
+              name="tamanio"
+              id="tamanio"
+              placeholder="Tamaño"
+            />
+        </div>
+        <div class="form-group">
+            <label for="masa">Masa</label>
+            <input class="inputs"
+              type="text"
+              required
+              name="masa"
+              id="masa"
+              placeholder="Masa"
+            />
+        </div>
+
+        <div class="form-group">
+        <label for="tipo">Tipo</label>
+        <select id="tipo" name="tipo" class="inputs">
+            <option value="rocoso">Rocoso</option>
+            <option value="rocoso">Gaseoso</option>
+            <option value="helado">Helado</option>
+            <option value="enano">Enano</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <label for="dimension">Dimension del Sol</label>
+
+          <input class="inputs"
+          type="number"
+          required
+          name="dimension"
+          id="dimension"
+          placeholder="dimension"
+          />
+        </div>
+        <div class="form-group">
+        <label for="vida">Presenta Vida</label>
+
+          <input class="inputs"
+          type="checkbox"
+          name="vida"
+          id="vida"
+          />
+        </div>
+        <div class="form-group">
+          <label for="anillo">Presenta Anillo</label>
+  
+            <input class="inputs"
+            type="checkbox"
+            name="anillo"
+            id="anillo"
+            />
+          </div>
+          <div class="form-group">
+            <label for="composicion">Composicion Admosferica</label>
+    
+              <input class="inputs"
+              type="text"
+              required
+              name="composicion"
+              id="composicion"
+              placeholder="composicion"
+              />
+            </div>
+        <!-- boton -->
+        <div class="form-group">
+          <button class="btn__quote" id="buton-guardar" style="display: flex;">Guardar</button>
+        </div>
+        <div class="form-group">
+          <button class="btn__quote" type="button" id="buton-cancelar" style="display: flex;">Cancelar</button>
+        </div>
+      </form>  
+      <!-- eliminar fila -->
+      <form action="" method="post" id="form-modificar">
+        <div class="modificar-group">
+          <label for="buscar">INGRESAR ID</label>
+          <input class="inputs"
+          type="text"
+          required
+          name="buscar"
+          id="buscar"
+          placeholder="Id"
+          />
+        </div>
+        <div class="modificar-group">
+          <button class="btn__quote" type="button" id="btn-buscar">Buscar</button>
+        </div>
+        <div class="modificar-group">
+          <button class="btn__quote" type="button" id="btn-eliminar" style="display: none;">Eliminar</button>
+        </div>
+        <div class="modificar-group">
+          <button class="btn__quote" type="button" id="btn-modificar" style="display: none;">Modificar</button>
+        </div>
+        <div class="modificar-group">
+          <button class="btn__quote" type="button" id="btn-cancelar" style="display: none;">Cancelar</button>
+        </div>
+       
+      </form>
+      <div class="spinner-container">
+              <img src="./assets/load-verde.png" alt="Cargando..." id="spinner" class="spinner" style="display: none;">
+      </div>
+      <div class="container-btn-delete-all">
+        <button type="button" id="btn-delete-all" class="btn__quote">Borrar Todo</button>
+      </div>
+        <!-- tabla -->
+      <div class="container-table flex">
+        <table id="table-items" class="table-items table-stripped flex">
+          <thead>
+            <tr class="flex">
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Tamaño</th>
+              <th>Masa</th>
+              <th>Tipo</th>
+              <th>Dimension del Sol</th>
+              <th>Vida</th>
+              <th>Anillo</th>
+              <th>Composicion Admosferica</th>
+            </tr>
+          </thead>
+          <tbody class="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="container-footer">
+      <div class="menu menu-footer">
+        <nav>
+          <ul>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Obras</a></li>
+            <li><a href="#">Contactos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

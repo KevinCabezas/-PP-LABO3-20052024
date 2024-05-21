@@ -1,0 +1,32 @@
+
+.form-group {
+    margin-bottom: 1.5em;
+}
+
+label {
+    color: #1c8f8f; /* Red text for labels */
+    display: block;
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+}
+.inputs {
+    width: 150px;
+    padding: 0.5em;
+    border: 2px solid #1fa38d; /* Red border color */
+    border-radius: 8px; /* Rounded borders */
+    outline: none;
+    color: #0ccfafec;
+
+    /* margin-right: 0.5em; */
+    accent-color: #1fa38d;
+}
+
+.inputs::placeholder {
+    color: #0ccfafec;
+}
+
+.inputs:focus {
+    background-color: #1fa38d; /* Red background on focus */
+    border-color: #1fa38d; /* Keep the red border on focus */
+    color: #ffffff; 
+}
