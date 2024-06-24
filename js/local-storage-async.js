@@ -1,7 +1,7 @@
 // local-storage.js
 // Simulando una respuesta asincrónica con un retardo de 2 segundos
 
-const delay = 2; // en segundos
+const delay = 2.5; // en segundos
 
 // Función asincrónica para leer del localStorage
 export function leer(clave) {

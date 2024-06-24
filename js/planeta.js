@@ -1,22 +1,49 @@
-class Planeta {
-  constructor(id, nombre, tamanio, masa,tipo, dimension, vida, anillo, composicion) {
-    this.id = id;
-    this.nombre = nombre;
-    this.tamanio = tamanio;
-    this.masa = masa;
+import { PlanetaBase } from './planetaBase.js';
+
+class Planeta extends PlanetaBase {
+  constructor(id, nombre, tamanio, masa,tipo, distancia, vida, anillo, composicion) {
+    super(id, nombre, tamanio, masa, tipo);
     this.tipo = tipo;
-    this.dimension =  dimension;
+    this.distancia =  distancia;
     this.vida = vida;
     this.anillo = anillo;
     this.composicion = composicion;
   }
 
   verify() {
-    return this.checkTitulo();
+
+    const tamanioCheck = this.checkTamanio();
+    if (!tamanioCheck.success) {
+      return tamanioCheck;
+    }
+
+    const distanciaCheck = this.checkDistancia();
+    if (!distanciaCheck.success) {
+      return distanciaCheck;
+    }
+    return { success: true, rta: null };
   }
 
   checkTitulo() {
     return { success: true, rta: null };
+  }
+
+  checkTamanio() {
+    if (this.tamanio < 0) {
+      return { success: false, rta: 'ingrese numeros mayor a cero tamaño', campo: 'tamanio'};
+    }
+    else {
+      return { success: true, rta: null};
+    }
+  }
+
+  checkDistancia() {
+    if (this.distancia < 0) {
+      return { success: false, rta: 'ingrese numeros mayor a cero distancia', campo: 'distancia'};
+    }
+    else {
+      return { success: true, rta: null};
+    }
   }
 }
 
